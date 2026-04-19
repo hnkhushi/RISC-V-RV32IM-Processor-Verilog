@@ -23,7 +23,7 @@ The processor is a **single-cycle datapath** with the following stages:
 
 All stages complete in one cycle **except M-extension instructions**, which stall the PC and run over multiple cycles.
 
-![Architecture](Architecture.png)
+![Architecture](images/Architecture.png)
 
 ## Design Approach
 
@@ -75,7 +75,7 @@ Register x2 = 6
 
 Memory[0] = 6
 
-![SumtoN](sumto_n_sim(2).jpg)
+![SumtoN](images/sumto_n_sim(2).jpg)
 
 ---
 
@@ -104,7 +104,7 @@ Register x4 = 30
 
 Memory[1] = 30
 
-![MulSim](mul_sim(1).jpg)
+![MulSim](images/mul_sim(1).jpg)
 
 Note: The assembly program was converted to corresponding hex code and written in the Instruction Memory module of the processor
 
