@@ -1,0 +1,24 @@
+Sum upto N numbers
+
+addi x1, x0, 4		N
+addi x2, x0, 0		result
+addi x3, x0, 0		i
+loop
+add x2, x2, x3		result+=i
+addi x3, x3, 1 		i++
+addi x1, x1, -1		N--
+bne x1, x0, loop
+sw x2 m0
+
+Sum upto N squares
+
+addi x1,x0,1		i
+addi x2,x0,5		N
+addi x3,x0,1		intermediate
+addi x4,x0,0		result
+loop
+mul x3,x1,x1		intermediate=i*i
+add x4,x4,x3		result+=intermediate
+addi x1,x1,1		i++
+bne x2,x1,loop
+sw x4, 0(x1)
