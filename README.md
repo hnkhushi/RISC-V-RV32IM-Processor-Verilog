@@ -119,6 +119,27 @@ Note: The assembly program was converted to corresponding hex code and written i
 | PC Stall         | No                 | Yes (during `mul`)           |
 | Complexity       | Simple             | Higher due to M-unit         |
 
-## Future Work
-- Formal Verification of the processor
-- Implementation on FPGA
+## FPGA Implementation
+This processor was successfully implemented on the Arty A7 Artix-7 FPGA board and here are the results.
+
+Instructions were given in a mem file and loaded onto the FPGA using readmemh.
+
+LSB 4 bits of the program counter were given as outputs to the on board LEDs.
+
+![Output](FPGA/output.jpeg)
+
+This sequence of program counter appears 5 times for the program of sum to N number for N=4. First sequence is the set of instructions executing the loading of registers with initial values. The next 4 times is the looping for sum. Executes as per the program counter in simulation waveform.
+
+For the program of sum to N squares, the same type of sequence is observed and 4th state (bottom right) stays for around 35 cycles which denotes that multiplication operation is being performed. This sequence repeats 4 times for sum of squares upto 4.
+
+**Utilisation**
+
+![Util](FPGA/utilisation.jpg)
+
+**Timing**
+
+![Timing](FPGA/timing.jpg)
+
+**Power report**
+
+![Power](FPGA/power.jpg)
